@@ -1,0 +1,87 @@
+<!DOCTYPE>
+<html lang="fr">
+
+    <head>
+        <title>PortFolio | AP</title>
+
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
+        <link href="./assets/css/style.css" rel="stylesheet" />
+        <link type="text/css" rel="stylesheet" href="assets/dist/tailwind.css">
+    </head>
+
+    <body>
+        <div class="bg"></div>
+        <div class="progress-bar" style="--width: 10;" data-label="LOADING"></div>
+
+        <!--  N A V  B A R  -->
+
+        <div id="app">
+            <nav>
+                <!--
+                <div class="nav-container">
+
+                    <ul id="icons">
+                        <li>
+                            <router-link to="/about">
+                                <i class="fas fa-user"></i>
+                            </router-link>
+                        </li>
+                        <li>
+                            <router-link to="/portfolio">
+                                <i class="fas fa-heart"></i>
+                                <span id="nav-not"></span>
+                            </router-link>
+
+                        </li>
+                        <li>
+                            <router-link to="/link">
+                                <i class="fas fa-shopping-cart"></i>
+                            </router-link>
+                        </li>
+                    </ul>
+                </div>
+                -->
+            </nav>
+
+            <router-view></router-view>
+
+        </div>
+
+        <!-- C O M P O N E N T S -->
+
+            <!--  P O R T  F O L I O  -->
+
+                <script type="text/x-template" id="portfolio">
+                    <div class="portfolio-container">
+
+                    </div>
+                </script>
+
+            <!--  A B O U T  -->
+
+                <script type="text/x-template" id="about">
+                    <div class="about-container">
+
+                    </div>
+                </script>
+
+            <!--  L I N K  -->
+
+                <script type="text/x-template" id="link">
+                    <div class="link-container">
+
+                    </div>
+                </script>
+
+    </body>
+
+    <script src="./assets/js/vue.js"></script>
+    <script src="./assets/js/vue-router.js"></script>
+    <script src="./assets/js/vue-cookies.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="./assets/js/progress-bar.js"></script>
+</html>
