@@ -15,67 +15,107 @@
 
     <body>
         <div class="bg"></div>
-        <div class="progress-bar" style="--width: 10;" data-label="LOADING"></div>
-
-        <!--  N A V  B A R  -->
 
         <div id="app">
-            <nav>
-                <!--
-                <div class="nav-container">
+            <div class="flex h-screen">
+                <div class="m-auto">
+                    <div class="progress-bar mx-auto my-72 sm:mx-auto" style="--width: 10;" data-label="LOADING"></div>
 
-                    <ul id="icons">
-                        <li>
-                            <router-link to="/about">
-                                <i class="fas fa-user"></i>
-                            </router-link>
-                        </li>
-                        <li>
-                            <router-link to="/portfolio">
-                                <i class="fas fa-heart"></i>
-                                <span id="nav-not"></span>
-                            </router-link>
+                    <main id="main" hidden="true">
 
-                        </li>
-                        <li>
-                            <router-link to="/link">
-                                <i class="fas fa-shopping-cart"></i>
-                            </router-link>
-                        </li>
-                    </ul>
+                        <!--  N A V  B A R  -->
+
+                        <nav class="fixed bottom-0 inset-x-0 m-10 lg:mx-96 rounded-lg border-4 flex text-sm text-gray-700 uppercase font-mono custom-navbar">
+                            <!--<div class="nav-container">-->
+                            <div class="mx-auto flex">
+
+                                <router-link to="/portfolio">
+                                    <a href="#" class="button-navbar block py-1 px-2 mx-4 my-3 text-center hover:text-blue-800 transition duration-300">
+                                        <i class="fas fa-book text-lg text-green-500 shadow-lg m-1"></i>
+                                    </a>
+                                </router-link>
+
+                                <router-link to="/about">
+                                    <a href="#" class="button-navbar block py-1 px-2 mx-4 my-3 text-center hover:text-blue-800">
+                                        <i class="fas fa-user text-lg text-green-500 shadow-lg m-1"></i>
+                                    </a>
+                                </router-link>
+
+                                <router-link to="/link">
+                                    <a href="#" class="button-navbar block py-1 px-2 mx-4 my-3 text-center hover:text-blue-800">
+                                        <i class="fas fa-share-alt text-lg text-green-500 shadow-lg m-1"></i>
+                                    </a>
+                                </router-link>
+
+
+                            </div>
+                        </nav>
+
+                        <!-- C O M P O N E N T S -->
+
+                        <!--  P O R T  F O L I O  -->
+
+                        <script type="text/x-template" id="portfolio">
+                            <div class="portfolio-container">
+                                <h1 class="text-white mx-auto my-72">PORTFOLIO</h1>
+                            </div>
+                        </script>
+
+                        <!--  A B O U T  -->
+
+                        <script type="text/x-template" id="about">
+                            <div class="about-container">
+                                <h1 class="text-white mx-auto">ABOUT</h1>
+                            </div>
+                        </script>
+
+                        <!--  L I N K  -->
+
+                        <script type="text/x-template" id="link">
+                            <div class="link-container">
+                                <h1 class="text-white mx-auto">LINK</h1>
+                            </div>
+                        </script>
+
+                    </main>
+
                 </div>
-                -->
-            </nav>
+            </div>
 
             <router-view></router-view>
 
         </div>
 
-        <!-- C O M P O N E N T S -->
+        <!--
 
-            <!--  P O R T  F O L I O  -->
 
-                <script type="text/x-template" id="portfolio">
-                    <div class="portfolio-container">
+          <nav>
 
-                    </div>
-                </script>
+                  <ul id="icons">
+                      <li>
+                          <router-link to="/about">
+                              <i class="fas fa-user"></i>
+                          </router-link>
+                      </li>
+                      <li>
+                          <router-link to="/portfolio">
+                              <i class="fas fa-heart"></i>
+                              <span id="nav-not"></span>
+                          </router-link>
 
-            <!--  A B O U T  -->
+                      </li>
+                      <li>
+                          <router-link to="/link">
+                              <i class="fas fa-shopping-cart"></i>
+                          </router-link>
+                      </li>
+                  </ul>
+              </div>
 
-                <script type="text/x-template" id="about">
-                    <div class="about-container">
+            </nav>
+        -->
 
-                    </div>
-                </script>
 
-            <!--  L I N K  -->
-
-                <script type="text/x-template" id="link">
-                    <div class="link-container">
-
-                    </div>
-                </script>
 
     </body>
 
