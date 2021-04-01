@@ -1,25 +1,63 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
 
-body {
+html {
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     cursor: url("../img/cursor/mac.png"), pointer;
+    background: linear-gradient(45deg, #221f1f, #1d1a1a);
+
 }
 
 .bg {
     position: fixed;
+    /*
     top: -50%;
     left: -50%;
     right: -50%;
     bottom: -50%;
     width: 200%;
-    height: 200vh;
-    background: linear-gradient(45deg, #221f1f, #1d1a1a);
+    height: 200vh;*/
+
     /*background-color: #111117; transparent url('../img/noise-transparent.png') repeat 0 0;*/
     /*animation: bg-animation .2s infinite;*/
     opacity: 1;
     visibility: visible;
+}
+
+.section{
+    font-family: 'Dela Gothic One', cursive;
+}
+
+.overflow-custom{
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #0d0c0c;
+    box-shadow:  5px 5px 10px #050505,
+    -5px -5px 10px #151313;
+}
+
+
+
+button {
+    border: none;
+    outline: none;
+}
+
+.avatar{
+    border-radius: 15px;
+    background: #221f1f;
+    box-shadow:  5px 5px 10px #0e0c0c,
+    -5px -5px 10px #363232;
+}
+
+.avatar-img{
 }
 
 @keyframes bg-animation {
@@ -44,9 +82,12 @@ body {
     position: relative;
     width: 700px;
     height: 40px;
-    background-color: #019500;
     color: #019500;
     margin: auto;
+    border-radius: 4px;
+    background: #019500;
+    box-shadow:  -5px 5px 12px #020a02,
+5px -5px 12px #082008;
 }
 
 .progress-bar::before {
@@ -64,7 +105,6 @@ body {
     max-width: calc(100% - .7em);
     background-color: black;
     padding: 0.3em;
-     font-family: Raleway, serif;
 }
 
 .progress-bar::after {
@@ -110,6 +150,20 @@ body {
     font-size: 30px;
 }
 
+.button-pf {
+    border-radius: 25px;
+    background: linear-gradient(145deg, #242121, #1f1c1c);
+    box-shadow:  7px 7px 14px #0e0c0c,
+    -7px -7px 14px #363232;
+}
+
+.button-pf:active {
+    border-radius: 25px;
+    background: #221f1f;
+    box-shadow: inset 7px 7px 14px #0e0c0c,
+    inset -7px -7px 14px #363232;
+}
+
 .custom-navbar {
     /*border-color: #019500;*/
     margin-left: 24px;
@@ -130,13 +184,21 @@ body {
 }
 
 .button-navbar {
-    border-radius: 80px;
-    box-shadow:  6px 6px 12px #0d0c0c,
-    -6px -6px 12px #332e2e;
+    border-radius: 4px;
+    box-shadow:  4px 4px 12px #0d0c0c,
+    4px 3px 12px #332e2e;
 }
 
 .button-navbar:active {
-    border-radius: 80px;
+    border-radius: 4px;
     box-shadow: inset 6px 6px 12px #0d0c0c,
     inset -6px -6px 12px #332e2e;
 }
+
+.title-pf{
+    margin-top: 48%;
+    padding-bottom: 24%
+}
+
+
+

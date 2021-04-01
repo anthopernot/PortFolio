@@ -11,61 +11,135 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" />
         <link href="./assets/css/style.css" rel="stylesheet" />
         <link type="text/css" rel="stylesheet" href="assets/dist/tailwind.css">
+        <link type="text/css" rel="stylesheet" href="assets/css/glitch.css">
     </head>
 
     <body>
-        <div class="bg"></div>
+            <div id="app">
+                    <div class="bg"></div>
 
-        <div id="app">
-            <div class="flex h-screen">
-                <div class="m-auto">
-                    <div class="progress-bar mx-auto my-72 sm:mx-auto" style="--width: 10;" data-label="LOADING"></div>
+                        <div class="flex my-28">
+                            <div class="m-auto">
 
-                    <main id="main" hidden="true">
+                                <div class="progress-bar mx-auto my-72 sm:mx-auto" style="--width: 10;" data-label="LOADING"></div>
 
-                        <!--  N A V  B A R  -->
+                                <main id="main" hidden="true">
 
-                        <nav class="fixed bottom-0 inset-x-0 m-10 lg:mx-96 rounded-lg border-4 flex text-sm text-gray-700 uppercase font-mono custom-navbar">
-                            <!--<div class="nav-container">-->
-                            <div class="mx-auto flex">
+                                        <!--  N A V  B A R  -->
 
-                                <router-link to="/portfolio">
-                                    <a href="#" class="button-navbar block py-1 px-2 mx-4 my-3 text-center hover:text-blue-800 transition duration-300">
-                                        <i class="fas fa-book text-lg text-green-500 shadow-lg m-1"></i>
-                                    </a>
-                                </router-link>
+                                        <nav class="fixed bottom-0 inset-x-0 m-10 lg:mx-96 flex text-sm text-gray-700 uppercase font-mono">
+                                            <!--<div class="nav-container">-->
+                                            <div class="mx-auto flex">
 
-                                <router-link to="/about">
-                                    <a href="#" class="button-navbar block py-1 px-2 mx-4 my-3 text-center hover:text-blue-800">
-                                        <i class="fas fa-user text-lg text-green-500 shadow-lg m-1"></i>
-                                    </a>
-                                </router-link>
+                                                <router-link to="/portfolio">
+                                                    <a href="#" class="button-navbar block py-1 px-2 mx-4 my-3 text-center hover:text-blue-800 transition duration-300">
+                                                        <i class="fas fa-book text-lg text-green-500 shadow-lg m-1"></i>
+                                                    </a>
+                                                </router-link>
 
-                                <router-link to="/link">
-                                    <a href="#" class="button-navbar block py-1 px-2 mx-4 my-3 text-center hover:text-blue-800">
-                                        <i class="fas fa-share-alt text-lg text-green-500 shadow-lg m-1"></i>
-                                    </a>
-                                </router-link>
+                                                <router-link to="/about">
+                                                    <a href="#" class="button-navbar block py-1 px-2 mx-4 my-3 text-center hover:text-blue-800">
+                                                        <i class="fas fa-user text-lg text-green-500 shadow-lg m-1"></i>
+                                                    </a>
+                                                </router-link>
 
+                                                <router-link to="/link">
+                                                    <a href="#" class="button-navbar block py-1 px-2 mx-4 my-3 text-center hover:text-blue-800">
+                                                        <i class="fas fa-share-alt text-lg text-green-500 shadow-lg m-1"></i>
+                                                    </a>
+                                                </router-link>
+
+                                            </div>
+                                        </nav>
+
+
+                                        <div class="container px-4 md:px-0 max-w-8xl mx-auto -mt-16">
+                                            <div class="mx-0 sm:mx-6">
+                                                <router-view></router-view>
+                                            </div>
+                                        </div>
+
+                                </main>
 
                             </div>
-                        </nav>
+                        </div>
+                    </div>
 
-                        <!-- C O M P O N E N T S -->
+                    <!--  C O M P O N E N T S  -->
 
                         <!--  P O R T  F O L I O  -->
 
                         <script type="text/x-template" id="portfolio">
-                            <div class="portfolio-container">
-                                <h1 class="text-white mx-auto my-72">PORTFOLIO</h1>
+                            <div class="section">
+                                <div class="flex text-green-500 text-4xl justify-center">PORTFOLIO</div>
+                                <div class="text-green-500 lg:text-xl mx-auto my-40">
+                                    <router-link to="/portfolio/digital">
+                                        <a href="#" class="button-pf justify-center py-2 px-8 flex m-12">DIGITAL</a>
+                                    </router-link>
+                                    <router-link to="/portfolio/design">
+                                        <a href="#" class="button-pf justify-center py-2 px-9 flex m-12">DESIGN</a>
+                                    </router-link>
+                                    <router-link to="/portfolio/custom">
+                                        <a href="#" class="button-pf justify-center py-2 px-8 flex m-12">CUSTOM</a>
+                                    </router-link>
+                                    <router-link to="/portfolio/webapp">
+                                        <a href="#" class="button-pf justify-center py-2 px-8 flex m-12">WEB APP</a>
+                                    </router-link>
+                                </div>
                             </div>
                         </script>
+
+
+                                <!--  DIGITAL  -->
+
+                                <script type="text/x-template" id="digital">
+                                    <div class="section">
+                                        <div class="flex text-green-500 text-4xl justify-center">DIGITAL</div>
+                                        <div class="overflow-custom m-10 mx-auto justify-center text-center" style="height: 44em; width: 100%">
+
+                                        </div>
+                                    </div>
+                                </script>
+
+                                <!--  DESIGN  -->
+
+                                <script type="text/x-template" id="design">
+                                    <div class="section">
+                                        <div class="flex text-green-500 text-4xl justify-center">DESIGN</div>
+                                    </div>
+                                </script>
+
+                                <!--  CUSTOM  -->
+
+                                <script type="text/x-template" id="custom">
+                                    <div class="section">
+                                        <div class="flex text-green-500 text-4xl justify-center">CUSTOM</div>
+                                    </div>
+                                </script>
+
+                                <!--  WEBAPP  -->
+
+                                <script type="text/x-template" id="webapp">
+                                    <div class="section">
+                                        <div class="flex text-green-500 text-4xl justify-center">WEB APP</div>
+                                    </div>
+                                </script>
+
 
                         <!--  A B O U T  -->
 
                         <script type="text/x-template" id="about">
-                            <div class="about-container">
-                                <h1 class="text-white mx-auto">ABOUT</h1>
+                            <div class="section text-green-500">
+                                 <div class="flex">
+                                     <div class="w-full md:w-2/3 ml-10 flex flex-col flex-grow flex-shrink ">
+                                         <div class="col-span-4 lg:-mx-2 lg:text-6xl"><h1>ABOUT</h1></div>
+                                     </div>
+                                     <div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
+                                         <div class="row-span-2 avatar">
+                                             <img class="avatar-img" src="./assets/img/holo1.png" alt="">
+                                         </div>
+                                     </div>
+                                 </div>
                             </div>
                         </script>
 
@@ -77,51 +151,15 @@
                             </div>
                         </script>
 
-                    </main>
 
-                </div>
-            </div>
 
-            <router-view></router-view>
+
+            <script src="./assets/js/vue.js"></script>
+            <script src="./assets/js/vue-router.js"></script>
+            <script src="./assets/js/vue-cookies.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script src="./assets/js/progress-bar.js"></script>
 
         </div>
-
-        <!--
-
-
-          <nav>
-
-                  <ul id="icons">
-                      <li>
-                          <router-link to="/about">
-                              <i class="fas fa-user"></i>
-                          </router-link>
-                      </li>
-                      <li>
-                          <router-link to="/portfolio">
-                              <i class="fas fa-heart"></i>
-                              <span id="nav-not"></span>
-                          </router-link>
-
-                      </li>
-                      <li>
-                          <router-link to="/link">
-                              <i class="fas fa-shopping-cart"></i>
-                          </router-link>
-                      </li>
-                  </ul>
-              </div>
-
-            </nav>
-        -->
-
-
-
     </body>
-
-    <script src="./assets/js/vue.js"></script>
-    <script src="./assets/js/vue-router.js"></script>
-    <script src="./assets/js/vue-cookies.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script src="./assets/js/progress-bar.js"></script>
 </html>
