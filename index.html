@@ -12,6 +12,8 @@
         <link href="./assets/css/style.css" rel="stylesheet" />
         <link type="text/css" rel="stylesheet" href="assets/dist/tailwind.css">
         <link type="text/css" rel="stylesheet" href="assets/css/glitch.css">
+        <link type="text/css" rel="stylesheet" href="assets/css/caroussel.css">
+
     </head>
 
     <body>
@@ -33,19 +35,19 @@
 
                                                 <router-link to="/portfolio">
                                                     <a href="#" class="button-navbar block py-1 px-2 mx-4 my-3 text-center hover:text-blue-800 transition duration-300">
-                                                        <i class="fas fa-book text-lg text-green-500 shadow-lg m-1"></i>
+                                                        <i class="fas fa-book text-lg lg:text-4xl lg:p-3 xl:p-0 xl:text-2xl text-green-500 shadow-lg m-1"></i>
                                                     </a>
                                                 </router-link>
 
                                                 <router-link to="/about">
-                                                    <a href="#" class="button-navbar block py-1 px-2 mx-4 my-3 text-center hover:text-blue-800">
-                                                        <i class="fas fa-user text-lg text-green-500 shadow-lg m-1"></i>
+                                                    <a href="#" class="button-navbar block py-1 px-2 mx-4 my-3 text-center hover:text-blue-800" @click="display = !display">
+                                                        <i class="fas fa-user text-lg lg:text-4xl lg:p-3 xl:p-0 xl:text-2xl text-green-500 shadow-lg m-1"></i>
                                                     </a>
                                                 </router-link>
 
                                                 <router-link to="/link">
                                                     <a href="#" class="button-navbar block py-1 px-2 mx-4 my-3 text-center hover:text-blue-800">
-                                                        <i class="fas fa-share-alt text-lg text-green-500 shadow-lg m-1"></i>
+                                                        <i class="fas fa-share-alt text-lg lg:text-4xl lg:p-3 xl:p-0 xl:text-2xl text-green-500 shadow-lg m-1"></i>
                                                     </a>
                                                 </router-link>
 
@@ -53,9 +55,11 @@
                                         </nav>
 
 
-                                        <div class="xl:container px-4 md:px-0 max-w-xs xl:max-w-8xl mx-auto -mt-16">
+                                        <div class="xl:container px-4 md:px-0 max-w-sx md:max-w-4xl lg:max-w-full xl:max-w-max -mt-24" >
                                             <div class="mx-0 sm:mx-6">
-                                                <router-view></router-view>
+                                                <transition name="fade" mode="out-in">
+                                                     <router-view></router-view>
+                                                </transition>
                                             </div>
                                         </div>
 
@@ -71,7 +75,7 @@
 
                         <script type="text/x-template" id="portfolio">
                             <div class="section">
-                                <div class="flex text-green-500 text-4xl justify-center">PORTFOLIO</div>
+                                <div class="flex text-green-500 text-4xl justify-center neon-typo">PORTFOLIO</div>
                                 <div class="text-green-500 lg:text-xl mx-auto my-40">
                                     <router-link to="/portfolio/digital">
                                         <a href="#" class="button-pf justify-center py-2 px-8 flex m-12">DIGITAL</a>
@@ -94,22 +98,39 @@
 
                                 <script type="text/x-template" id="digital">
                                     <div class="section">
-                                        <div class="flex text-green-500 text-4xl text-center">DIGITAL</div>
-                                        <div class="overflow-custom m-24 mx-auto justify-center text-center" style="height: 490%">
-                                            <div class="overflow-x-auto bg-green-500 bg-opacity-10" style="height: 490%">
-                                                <div class="flex flex-row  mt-5">
-                                                    <div class="bg-green-500 p-12 m-8 justify-center rounded-lg">1</div>
-                                                    <div class="bg-green-500 p-12 m-8 justify-center rounded-lg">2</div>
-                                                    <div class="bg-green-500 p-12 m-8 justify-center rounded-lg">3</div>
-                                                    <div class="bg-green-500 p-12 m-8 justify-center rounded-lg">3</div>
-                                                    <div class="bg-green-500 p-12 m-8 justify-center rounded-lg">3</div>
-                                                    <div class="bg-green-500 p-12 m-8 justify-center rounded-lg">3</div>
-                                                    <div class="bg-green-500 p-12 m-8 justify-center rounded-lg">3</div>
-                                                    <div class="bg-green-500 p-12 m-8 justify-center rounded-lg">3</div>
-                                                    <div class="bg-green-500 p-12 m-8 justify-center rounded-lg">3</div>
-                                                    <div class="bg-green-500 p-12 m-8 justify-center rounded-lg">3</div>
-                                                    <div class="bg-green-500 p-12 m-8 justify-center rounded-lg">3</div>
-                                                    <div class="bg-green-500 p-12 m-8 justify-center rounded-lg">3</div>
+                                        <div class="flex text-green-500 text-2xl text-center neon-typo">DIGITAL</div>
+                                        <div class="overflow-digital mt-2 mx-auto text-center" style="height: 490%">
+                                            <div class="overflow-y-scroll" style="height: 20%; ">
+                                                <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-7 gap-2">
+
+
+                                                    <div class="max-w-lg w-full lg:flex">
+                                                        <div class="h-40 lg:h-auto lg:w-full flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l overflow-hidden" style="background-image: url('https://tailwindcss.com/img/card-left.jpg')" title="Woman holding a mug">
+                                                        </div>
+                                                        <div class="border-r border-b border-l border-grey-light lg:border-l-0 lg:border-t lg:border-grey-light bg-white rounded-b lg:rounded-b-none lg:rounded-r pl-4 sm:px-96 md:px-44 flex flex-col justify-between leading-normal">
+                                                            <div class="mb-8">
+                                                                <div class="text-black text-xs mb-2">Can coffee make you a better developer?</div>
+                                                                <p class="text-grey-darker text-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus quia, nulla! Maiores et perferendis eaque, exercitationem praesentium nihil.</p>
+                                                            </div>
+                                                            <div class="flex items-center">
+                                                                <img class="w-10 h-10 rounded-full mr-4" src="https://pbs.twimg.com/profile_images/885868801232961537/b1F6H4KC_400x400.jpg" alt="Avatar of Jonathan Reinink">
+                                                                <div class="text-sm">
+                                                                    <p class="text-black leading-none">Jonathan Reinink</p>
+                                                                    <p class="text-grey-dark">Aug 18</p>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+                                                    <div class="card-digital p-24 justify-center" style="padding-left: 40rem; padding-right: 40rem">1</div>
+                                                    <div class="card-digital p-24 justify-center" style="padding-left: 40rem; padding-right: 40rem">2</div>
+                                                    <div class="card-digital p-24 justify-center" style="padding-left: 40rem; padding-right: 40rem">3</div>
+                                                    <div class="card-digital p-24 justify-center" style="padding-left: 40rem; padding-right: 40rem">3</div>
+                                                    <div class="card-digital p-24 justify-center" style="padding-left: 40rem; padding-right: 40rem">3</div>
+                                                    <div class="card-digital p-24 justify-center" style="padding-left: 40rem; padding-right: 40rem">3</div>
+                                                    <div class="card-digital p-24 justify-center" style="padding-left: 40rem; padding-right: 40rem">3</div>
+                                                    <div class="card-digital p-24 justify-center" style="padding-left: 40rem; padding-right: 40rem">3</div>
 
                                                 </div>
                                             </div>
@@ -121,15 +142,113 @@
 
                                 <script type="text/x-template" id="design">
                                     <div class="section">
-                                        <div class="flex text-green-500 text-4xl justify-center">DESIGN</div>
+                                        <div class="flex text-green-500 text-2xl text-center neon-typo">DESIGN</div>
+                                        <div class="overflow-digital mt-2 mx-auto text-center" style="height: 490%">
+                                            <div class="overflow-y-scroll" style="height: 20%;">
+                                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-5 gap-x-2">
+
+                                                    <div class="md:p-42 xl:m-8">
+                                                        <div class="grid grid-raws-2">
+                                                            <div class="bg-red-500 p-36 m-2"></div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="md:p-42 xl:m-8">
+                                                        <div class="grid grid-raws-2">
+                                                            <div class="bg-red-500 p-36 m-2">1</div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="md:p-42 xl:m-8">
+                                                        <div class="grid grid-raws-2">
+                                                            <div class="bg-red-500 p-36 m-2">1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="md:p-42 xl:m-8">
+                                                        <div class="grid grid-raws-2">
+                                                            <div class="bg-red-500 p-36 m-2">1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="md:p-42 xl:m-8">
+                                                        <div class="grid grid-raws-2">
+                                                            <div class="bg-red-500 p-36 m-2">1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="md:p-42 xl:m-8">
+                                                        <div class="grid grid-raws-2">
+                                                            <div class="bg-red-500 p-36 m-2">1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="md:p-42 xl:m-8">
+                                                        <div class="grid grid-raws-2">
+                                                            <div class="bg-red-500 p-36 m-2">1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="md:p-42 xl:m-8">
+                                                        <div class="grid grid-raws-2">
+                                                            <div class="bg-red-500 p-36 m-2">1</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="md:p-42 xl:m-8">
+                                                        <div class="grid grid-raws-2">
+                                                            <div class="bg-red-500 p-36 m-2">1</div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </script>
 
                                 <!--  CUSTOM  -->
 
                                 <script type="text/x-template" id="custom">
-                                    <div class="section">
-                                        <div class="flex text-green-500 text-4xl justify-center">CUSTOM</div>
+                                        <div class="section">
+                                            <div class="flex text-green-500 text-4xl justify-center mb-4 neon-typo-speed">CUSTOM</div>
+                                            <div class="grid grid-cols-1">
+                                                <div class="overflow-digital md:mt-4 mx-auto text-center" style="height: 39rem; width: 40rem; @media (min-width: 1024px) and (max-width: 1280px){height: 144rem; width: 150rem}">
+                                                    <div class="overflow-y-scroll" style="height: 720px;">
+
+                                                        <div class="carousel">
+                                                            <div class="carousel-inner">
+                                                                <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
+                                                                <div class="carousel-item">
+                                                                    <img src="http://fakeimg.pl/2000x800/0079D8/fff/?text=Without">
+                                                                </div>
+                                                                <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+                                                                <div class="carousel-item">
+                                                                    <img src="http://fakeimg.pl/2000x800/DA5930/fff/?text=JavaScript">
+                                                                </div>
+                                                                <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+                                                                <div class="carousel-item">
+                                                                    <img src="http://fakeimg.pl/2000x800/F90/fff/?text=Carousel">
+                                                                </div>
+                                                                <label for="carousel-3" class="carousel-control prev control-1">‹</label>
+                                                                <label for="carousel-2" class="carousel-control next control-1">›</label>
+                                                                <label for="carousel-1" class="carousel-control prev control-2">‹</label>
+                                                                <label for="carousel-3" class="carousel-control next control-2">›</label>
+                                                                <label for="carousel-2" class="carousel-control prev control-3">‹</label>
+                                                                <label for="carousel-1" class="carousel-control next control-3">›</label>
+                                                                <ol class="carousel-indicators">
+                                                                    <li>
+                                                                        <label for="carousel-1" class="carousel-bullet">•</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label for="carousel-2" class="carousel-bullet">•</label>
+                                                                    </li>
+                                                                    <li>
+                                                                        <label for="carousel-3" class="carousel-bullet">•</label>
+                                                                    </li>
+                                                                </ol>
+                                                            </div>
+                                                        </div>
+
+
+                                                </div>
+
+                                            </div>
+                                        </div>
                                     </div>
                                 </script>
 
@@ -137,7 +256,25 @@
 
                                 <script type="text/x-template" id="webapp">
                                     <div class="section">
-                                        <div class="flex text-green-500 text-4xl justify-center">WEB APP</div>
+                                        <div class="flex text-green-500 text-4xl justify-center mb-4 neon-typo-speed-2">WEB APP</div>
+                                        <div class="grid grid-cols-1">
+                                            <div class="overflow-digital md:mt-4 mx-auto text-center" style="height: 39rem; width: 40rem; @media (min-width: 1024px) and (max-width: 1280px){height: 144rem; width: 150rem}">
+                                                <div class="overflow-y-scroll" style="height: 720px;">
+                                                    <div class="mx-auto md:p-42 xl:m-4">
+                                                        <div class="grid grid-raws-2 mx-auto">
+                                                            <div class="bg-red-500 py-14 xl:px-96 md:px-72 xs:px-96 m-2">1</div>
+                                                            <div class="bg-red-500 py-14 xl:px-96 md:px-72 xs:px-96 m-2">1</div>
+
+                                                            <div class="bg-red-500 py-14 xl:px-96 md:px-72 xs:px-96 m-2">1</div>
+                                                            <div class="bg-red-500 py-14 xl:px-96 md:px-72 xs:px-96 m-2">1</div>
+                                                            <div class="bg-red-500 py-14 xl:px-96 md:px-72 xs:px-96 m-2">1</div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
                                     </div>
                                 </script>
 
@@ -145,36 +282,55 @@
                         <!--  A B O U T  -->
 
                         <script type="text/x-template" id="about">
-                            <div class="section text-green-500">
-                                 <div class="flex">
-                                     <div class="w-full md:w-2/3 ml-10 flex flex-col flex-grow flex-shrink ">
-                                         <div class="col-span-4 lg:-mx-2 lg:text-6xl"><h1>ABOUT</h1></div>
-                                     </div>
-                                     <div class="w-full md:w-1/3 flex flex-col flex-grow flex-shrink">
-                                         <div class="row-span-2 avatar">
-                                             <img class="avatar-img" src="./assets/img/holo1.png" alt="">
-                                         </div>
-                                     </div>
-                                 </div>
-                            </div>
+                                <div class="section text-green-500">
+                                    <div class="grid grid-cols-3 gap-2 md:gap-7  ">
+
+                                        <div class="col-span-2 text-4xl md:text-6xl lg:text-8xl xl:text-6xl xs:mt-0 p-1 mt-2 mr-24"><h1>ABOUT</h1></div>
+                                        <div class="row-span-2 avatar"></div>
+                                        <div class="col-span-2 bg-white p-10 pr0 md:pr-96 ">2</div>
+                                        <div class="col-span-3 bg-white p-10 py-20 xl:py-20 sm:py-2 lg:py-60 md:py-36 mt-2 mb-2 md:mt-8 rounded">4</div>
+                                        <div class="col-span-3 bg-white p-10 py-12 xl:py-20 sm:py-4 lg:py-24 md:py-20 md:mt-4 rounded">6</div>
+
+                                    </div>
+                                </div>
                         </script>
+
+
 
                         <!--  L I N K  -->
 
                         <script type="text/x-template" id="link">
-                            <div class="link-container">
-                                <h1 class="text-white mx-auto">LINK</h1>
+                            <div class="section wrapper">
+                                    <span class="neon-icon text-8xl lg:text-8xl"><i class="pl-8 fas fa-link"></i></span>
+                                    <div class="text-green-500 lg:text-6xl xl:text-4xl md:text-5xl text-4xl mx-auto my-40">
+                                        <a href="#" class="button-pf justify-center py-3 px-5 flex m-12"><div class="namelink text-xs mr-0 pt-3 xl:mr-2 xl:pt-1 lg:mr-3 lg:text-lg lg:pt-4 md:mr-2 md:text-xl md:pt-2">Instagram</div> <i class="fab fa-instagram"></i> </a>
+
+                                        <a href="#" class="button-pf justify-center py-3 px-8 flex m-12"><div class="namelink text-xs mr-0 pt-3 xl:mr-2 xl:pt-1 lg:mr-3 lg:text-lg lg:pt-4 md:mr-2 md:text-xl md:pt-2">Github</div> <i class="fab fa-github"></i></a>
+
+                                        <!--
+                                        <a href="#" class="button-pf justify-center py-3 px-8 flex m-12" id="btn-github"><div class="text" data-text="Github" id="github-text"></div> <i class="fab fa-github"></i></a>
+                                        -->
+
+                                        <a href="#" class="button-pf justify-center py-3 px-10 flex m-12"><div class="namelink text-xs mr-0 pt-3 xl:mr-2 xl:pt-1 lg:mr-3 lg:text-lg lg:pt-4 md:mr-2 md:text-xl md:pt-2">ArtStation</div> <i class="fab fa-artstation"></i></a>
+                                </div>
                             </div>
                         </script>
 
 
-
+            <!-- include jQuery -->
+            <script
+                    src="https://code.jquery.com/jquery-2.2.4.min.js"
+                    integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+                    crossorigin="anonymous">
+            </script>
 
             <script src="./assets/js/vue.js"></script>
             <script src="./assets/js/vue-router.js"></script>
             <script src="./assets/js/vue-cookies.js"></script>
-            <script src="assets/js/main.js"></script>
-            <script src="./assets/js/progress-bar.js"></script>
+            <script src="./assets/js/main.js"></script>
+            <script src="./assets/js/plugin/progress-bar.js"></script>
+            <!-- include plugin glitch -->
+            <script src="./assets/js/plugin/mgGlitch.min.js"></script>
 
         </div>
     </body>

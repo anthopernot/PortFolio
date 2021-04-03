@@ -2,7 +2,12 @@
 
 const About = {
     template: '#about',
-    name: 'About'
+    name: 'About',
+    data() {
+        return {
+            display : true,
+        }
+    }
 }
 
 const Portfolio = {
@@ -51,3 +56,27 @@ const router = new VueRouter({
 const vue = new Vue({
     router
 }).$mount('#app');
+
+
+/**
+ RESPONSIVE LAYOUT
+                **/
+window.addEventListener('load', function () {
+    if(window.matchMedia("(max-width:400px)").matches) {
+        if(window.location.href.indexOf('link')){
+        var elem = document.querySelectorAll('.namelink');
+        elem.forEach(function (name) {
+
+                name.textContent = '';
+
+        });
+        document.getElementById("btn-github").removeChild(document.getElementById("github-text"));
+        }
+    }
+    if(window.matchMedia("(min-width:400px)").matches && window.matchMedia("(max-width:768px)").matches){
+        document.getElementById("github-text").style.paddingRight = '20px';
+    }
+    if(window.matchMedia("(min-width:768px)").matches && window.matchMedia("(max-width:1024px)").matches){
+        document.getElementById("github-text").style.paddingRight = '20px';
+    }
+});
