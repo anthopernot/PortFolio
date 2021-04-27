@@ -12,29 +12,25 @@
         <link href="./assets/css/style.css" rel="stylesheet" />
         <link type="text/css" rel="stylesheet" href="assets/dist/tailwind.css">
         <link type="text/css" rel="stylesheet" href="assets/css/glitch.css">
-        <link type="text/css" rel="stylesheet" href="assets/css/caroussel.css">
         <link type="text/css" rel="stylesheet" href="assets/css/popup.css">
-        <link type="text/css" rel="stylesheet" href="assets/css/slick-theme.css">
-        <link type="text/css" rel="stylesheet" href="assets/css/slick.css">
 
 
 
     </head>
 
     <body>
-            <audio controls="controls" id='applause' src="assets/audio/click.mp3" type="audio/mp3"></audio>
-            <script>function playSound() { document.getElementById('applause').play(); } </script>
-            <div id="app">
-                    <div class="bg"></div>
-
-                        <div class="flex my-28">
-                            <div class="m-auto">
-
-                                <div class="progress-bar mx-auto my-72 sm:mx-auto" style="--width: 10;" data-label="LOADING"></div>
 
 
+        <audio controls="controls" id='applause' src="assets/audio/click.mp3" type="audio/mp3"></audio>
+        <script>function playSound() { document.getElementById('applause').play(); } </script>
 
-                                <main id="main" hidden="true">
+
+                        <div id="app">
+                            <div class="bg"></div>
+                            <div class="flex my-28">
+                                <div class="m-auto">
+                                    <div class="progress-bar mx-auto my-72 sm:mx-auto" style="--width: 10;" data-label="LOADING"></div>
+                                    <main id="main" hidden="true">
 
                                         <!--  N A V  B A R  -->
 
@@ -64,28 +60,45 @@
                                         </nav>
 
 
+                                        <!--  VIEW CONTAINER  -->
+
                                         <div class="xl:container px-4 md:px-0 max-w-sx md:max-w-4xl lg:max-w-full xl:max-w-max -mt-24" >
                                             <div class="mx-0 sm:mx-6">
                                                 <transition name="fade" mode="out-in">
-                                                     <router-view></router-view>
+                                                    <router-view></router-view>
                                                 </transition>
                                             </div>
                                         </div>
 
-                                </main>
 
+                                    </main>
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <!--  C O M P O N E N T S  -->
+
+
+
+
+
+                        <!--
+
+
+                                C O M P O N E N T S
+
+
+                        -->
+
+
+
+
 
                         <!--  P O R T  F O L I O  -->
 
                         <script type="text/x-template" id="portfolio">
 
                             <div class="section mt-2 lg:text-2xl xl:text-xl">
-                                <input type="button" class="info-btn font-sans font-bold border-none rounded-full fixed top-0 left-0 sm:top-50 bg-gray-700 bg-opacity-40 hover:bg-opacity-100 text-white text-md text-opacity-40 hover:text-opacity-80 h-10 w-10 m-4" value="i">
+                                <a href="https://github.com/anthopernot/PortFolio" class="info-btn font-sans font-bold border-none text-center rounded-full fixed top-0 left-0 sm:top-50 bg-gray-700 bg-opacity-40 hover:bg-opacity-100 text-white text-md text-opacity-40 hover:text-opacity-80 h-10 w-10 m-4"><div class="mt-1">i</div></a>
                                 <div class="flex text-green-500 text-4xl justify-center neon-typo">PORTFOLIO</div>
                                 <div id="portfoliodescr" class="m-4 mt-6 xs:mt-2  text-center text-green-500" style="font-family: 'Lato', sans-serif; line-height: 25px">This page is dedicated to my personal book. <br>It includes my studies, my personal projects, as well as my freelance work</div>
                                 <div class="text-green-500 lg:text-1xl mx-auto my-24 gap-2">
@@ -103,115 +116,123 @@
                         </script>
 
 
-                                <!--  DESIGN  -->
+                        <!--  DESIGN  -->
 
-                                <script type="text/x-template" id="design">
-                                    <div class="section">
-                                        <div class="flex text-green-500 text-2xl text-center neon-typo">DESIGN</div>
-                                        <div class="overflow-digital mt-2 mx-auto text-center" style="height: 60%">
-                                            <div class="overflow-y-scroll overflow-design-size h-auto">
-                                                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:px-40 lg:pt-8 xl:grid-cols-4 gap-x-2" >
-
-                                                    <div class="md:p-42 xl:m-8" v-for="design in designTab">
-                                                        <div class="grid grid-raws-2">
-                                                            <div class="card-design py-20" v-bind:style='{ backgroundImage: "url(" + design.img[0].url + ")", }' @click="showPopup(design.title, design.img, design.tech)"><div class="text-card-design">{{ design.title }}</div></div>
+                        <script type="text/x-template" id="design">
+                            <div class="section">
+                                <div class="flex text-green-500 text-2xl text-center neon-typo">DESIGN</div>
+                                <div class="overflow-digital mt-2 mx-auto text-center" style="height: 60%">
+                                    <div class="overflow-y-scroll overflow-design-size h-auto">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:px-40 lg:pt-8 xl:grid-cols-4 gap-x-2" >
+                                            <div class="md:p-42 xl:m-8 sm:mb-12" v-for="design in designTab">
+                                                <div class="grid grid-raws-2">
+                                                    <router-link :to="{ name: 'Content', params: {userId: design.title, type:design.type, imgTab: JSON.stringify(design.img) } }">
+                                                        <div class="custom-card card-design py-20"  v-bind:style='{ backgroundImage: "url(" + design.img[0].url + ")", }' >
+                                                            <span class="text-card-design">{{ design.title }}</span>
                                                         </div>
-                                                    </div>
-
+                                                    </router-link>
                                                 </div>
-
                                             </div>
                                         </div>
                                     </div>
-                                </script>
+                                </div>
+                            </div>
+                        </script>
 
 
+                        <!--  CUSTOM  -->
 
-
-
-
-
-                                <!--  CUSTOM  -->
-
-                                <script type="text/x-template" id="custom">
-                                        <div class="section">
-                                            <div class="flex text-green-500 text-4xl justify-center mb-4 neon-typo-speed">CUSTOM</div>
-                                            <div class="overflow-digital mt-2 mx-auto text-center" style="height: 60%">
-                                                <div class="overflow-y-scroll overflow-design-size h-auto">
-                                                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:px-40 lg:pt-8 xl:grid-cols-4 gap-x-2" >
-
-                                                        <div class="md:p-42 xl:m-8 sm:mb-12" v-for="custom in customTab">
-                                                            <div class="grid grid-raws-2">
-                                                                <router-link :to="{ name: 'Content', params: {userId: custom.title, imgTab: JSON.stringify(custom.img) } }">
-                                                                    <div class="custom-card card-design text-card-design py-20" v-bind:id="(custom.id)" v-bind:data-title="custom.title" v-bind:data-img="JSON.stringify(custom.img)"  v-bind:style='{ backgroundImage: "url(" + custom.img[0].url + ")", }' >
-                                                                       {{ custom.title }}
-                                                                    </div>
-                                                                </router-link>
-                                                            </div>
+                        <script type="text/x-template" id="custom">
+                            <div class="section">
+                                <div class="flex text-green-500 text-4xl justify-center mb-4 neon-typo-speed">CUSTOM</div>
+                                <div class="overflow-digital mt-2 mx-auto text-center" style="height: 60%">
+                                    <div class="overflow-y-scroll overflow-design-size h-auto">
+                                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 lg:px-40 lg:pt-8 xl:grid-cols-4 gap-x-2" >
+                                            <div class="md:p-42 xl:m-8 sm:mb-12" v-for="custom in customTab">
+                                                <div class="grid grid-raws-2">
+                                                    <router-link :to="{ name: 'Content', params: {userId: custom.title, type:custom.type, imgTab: JSON.stringify(custom.img) } }">
+                                                        <div class="custom-card card-design py-20"  v-bind:style='{ backgroundImage: "url(" + custom.img[0].url + ")", }' >
+                                                            <span class="text-card-design">{{ custom.title }}</span>
                                                         </div>
-
-                                                    </div>
-
+                                                    </router-link>
                                                 </div>
                                             </div>
                                         </div>
-                                </script>
+                                    </div>
+                                </div>
+                            </div>
+                        </script>
 
+                         <!--  WEBAPP  -->
 
-                                <!--  WEBAPP  -->
-
-                                <script type="text/x-template" id="webapp">
-                                    <div class="section">
-                                        <div class="flex text-green-500 text-4xl justify-center mb-4 neon-typo-speed-2">WEB APP</div>
-                                        <div class="grid grid-cols-1">
-                                            <div class="overflow-digital md:mt-4 mx-auto text-center">
-                                                <div class="overflow-y-scroll overflow-design-size">
-                                                    <div class="mx-auto  xl:m-4">
-                                                        <div v-for="webapp in webappTab" class="grid mx-auto md:grid-cols-1 lg:grid-cols-1 lg:px-48 lg:pt-8 xl:grid-cols-1 gap-x-2">
-
-
-                                                            <div class="card-webapp rounded-xl m-5 w-auto h-48 mt-5">
-                                                                <div class="flex flex-row items-end h-auto w-full">
-                                                                    <div class="flex flex-col w-full pb-3 pt-5 xl:pt-8 px-3 text-gray-200">
-                                                                        <h3 class="url-custom relative mx-auto text-xl font-bold text-green-500 leading-5 pb-4 uppercase"><a v-bind:href="webapp.url">{{ webapp.title }}</a><span class="absolute -bottom-1 left-0 w-0 transition-all h-1 bg-green-400"></span></h3>
-                                                                        <div class="inline-flex items-center mx-auto mt-2">
-                                                                            <span class="text-sm mr-1" style="font-family: 'Lato', sans-serif; color: #3cb16c">{{ webapp.description }}</span>
-                                                                        </div>
-                                                                        <div class="inline-flex items-center mx-auto">
-                                                                            <p class=""><i class="fab fa-github text-sm text-green-500 mr-1"></i> <a v-bind:href="webapp.urlGit" style="margin-top: 2%; font-size:0.7em; font-family: 'Lato', sans-serif; color: #3cb16c">{{ webapp.urlGit }}</a></p>
-                                                                        </div>
-                                                                        <div class="inline-flex items-center mx-auto">
-                                                                            <p style="margin-top: 2%; font-size:0.7em; font-family: 'Lato', sans-serif; color: #3cb16c">{{ webapp.tech }}</p>
-                                                                        </div>
-                                                                    </div>
+                        <script type="text/x-template" id="webapp">
+                            <div class="section">
+                                <div class="flex text-green-500 text-4xl justify-center mb-4 neon-typo-speed-2">WEB APP</div>
+                                <div class="grid grid-cols-1">
+                                    <div class="overflow-digital md:mt-4 mx-auto text-center">
+                                        <div class="overflow-y-scroll overflow-design-size">
+                                            <div class="mx-auto  xl:m-4">
+                                                <div v-for="webapp in webappTab" class="grid mx-auto md:grid-cols-1 lg:grid-cols-1 lg:px-48 lg:pt-8 xl:grid-cols-1 gap-x-2">
+                                                    <div class="card-webapp rounded-xl m-5 w-auto h-48 mt-5">
+                                                        <div class="flex flex-row items-end h-auto w-full">
+                                                            <div class="flex flex-col w-full pb-3 pt-5 xl:pt-8 px-3 text-gray-200">
+                                                                <h3 class="url-custom relative mx-auto text-xl font-bold text-green-500 leading-5 pb-4 uppercase"><a v-bind:href="webapp.url">{{ webapp.title }}</a><span class="absolute -bottom-1 left-0 w-0 transition-all h-1 bg-green-400"></span></h3>
+                                                                <div class="inline-flex items-center mx-auto mt-2">
+                                                                    <span class="text-sm mr-1" style="font-family: 'Lato', sans-serif; color: #3cb16c">{{ webapp.description }}</span>
+                                                                </div>
+                                                                <div class="inline-flex items-center mx-auto">
+                                                                    <p class=""><i class="fab fa-github text-sm text-green-500 mr-1"></i> <a v-bind:href="webapp.urlGit" style="margin-top: 2%; font-size:0.7em; font-family: 'Lato', sans-serif; color: #3cb16c">{{ webapp.urlGit }}</a></p>
+                                                                </div>
+                                                                <div class="inline-flex items-center mx-auto">
+                                                                    <p style="margin-top: 2%; font-size:0.7em; font-family: 'Lato', sans-serif; color: #3cb16c">{{ webapp.tech }}</p>
                                                                 </div>
                                                             </div>
-
-
                                                         </div>
                                                     </div>
                                                 </div>
-                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </script>
+                                </div>
+                            </div>
+                        </script>
 
 
+                        <!--   CONTENT PAGE  -->
 
+                        <script type="text/x-template" id="content">
+                            <div class="section">
+                                <div class="flex text-green-500 text-sm lg:text-xl justify-center mb-4 neon-typo-speed-2">{{ $route.params.userId }}</div>
+                                <router-link v-if="$route.params.type === 'custom' " :to="{ name: 'Custom'}">
+                                    <div class="text-green-700 text-sm hover:text-green-300 mt-4 text-center flex  justify-center mb-4"><i class="fas fa-long-arrow-alt-left mt-1 mr-2"></i> back</div>
+                                </router-link>
+                                <router-link v-else :to="{ name: 'Design'}">
+                                    <div class="text-green-700 text-sm hover:text-green-300 mt-4 text-center flex  justify-center mb-4"><i class="fas fa-long-arrow-alt-left mt-1 mr-2"></i> back</div>
+                                </router-link>
+                                <div class="px-2">
+                                    <div class="flex -mx-4 justify-center">
+                                        <div class="w-1/5 px-2" v-for="img in JSON.parse($route.params.imgTab)">
+                                            <div class="opacity-40 hover:opacity-100 h-16" @click="completelyContent(img.url)" v-bind:style='{ backgroundImage: "url(" + img.url + ")", backgroundPosition: "center", backgroundSize : "cover", backgroundRepeat: "no-repeat"}'></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <img @click="openModal()" id="imageContent" class="image-content flex mx-auto" v-bind:src="JSON.parse($route.params.imgTab)[0].url" v-bind:alt="$route.params.title"/>
+                                <!-- MODAL ZOOM -->
+                                <div class="modal" id="my-modal">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <span class="close" @click="closeModal()">&times;</span>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="my-slides">
+                                                <img id="imageModal" v-bind:src="JSON.parse($route.params.imgTab)[0].url" class="portrait-image image" alt="first">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                        <script type="text/x-template" id="content">
-                                                  <div class="section">
-                                                            <h1 class="text-green-500">{{ $route.params.userId }}</h1>
-                                                            <p class="text-green-500" v-for="img in JSON.parse($route.params.imgTab)">
-                                                                {{ img.url }}
-                                                            </p>
-                                                  </div>
-                                        </script>
-
-
-
-
-
+                            </div>
+                        </script>
 
 
                         <!--  A B O U T  -->
@@ -222,7 +243,7 @@
 
                                         <div class="col-span-2 text-4xl md:text-6xl lg:text-8xl xl:text-8xl xs:mt-0  mt-2 " id="title-about"><h1 id="aboutt">ABOUT</h1></div>
                                         <div class="row-span-2 avatar"></div>
-                                        <div class="col-span-2 text-green-500 font-custom-2" id="description-about">Young self-taught artist who wants to be versatile in <br> creations: web developer, digital designer, <br> sneaker customer, painter <br> <a href="./assets/doc/cv.pdf"  target="_blank"><div class="motion-safe:hover:scale-110 bg-transparent hover:bg-green-500 hover:text-black font-bold mt-6 border-2 border-green-500 rounded-xl text-center" style="">CV</div></a></div>
+                                        <div class="col-span-2 text-green-500 font-custom-2" id="description-about">Young self-taught artist who wants to be versatile in <br> creations: web developer, digital designer, <br> sneaker customer, painter <br> <a href="./assets/doc/cv.pdf"  target="_blank"><div class="motion-safe:hover:scale-110 bg-transparent hover:bg-green-500 hover:text-black font-bold mt-6 border-2 border-green-500 rounded-xl text-center">CV</div></a></div>
                                         <div class="col-span-3 mx-auto" id="section-about">
                                              <div class=" text-center mb-4" style="font-size: 20px; letter-spacing: 3px">SKILLS</div>
                                             <table class="mx-auto">
@@ -247,7 +268,7 @@
                                             <div class=" text-center mb-4" style="font-size: 20px; letter-spacing: 3px">SOFTWARE</div>
                                             <table class="mx-auto">
                                                 <tr>
-                                                    <th><img src="assets/img/Photoshop_icon.svg.png" alt="" style="width: 40px; opacity:0.5; -webkit-filter: drop-shadow(6px 6px 4px rgba(3,8,3,0.45)); filter: drop-shadow(6px 6px 4px rgb(5,17,5)); margin-inline: 15px"></th>
+                                                    <th><img src="assets/img/cc.png" alt="" style="width: 40px; opacity:0.5; -webkit-filter: drop-shadow(6px 6px 4px rgba(3,8,3,0.45)); filter: drop-shadow(6px 6px 4px rgb(5,17,5)); margin-inline: 15px"></th>
                                                     <th><img src="assets/img/krita-base.svg.png" alt="" style="width: 40px; opacity:0.5; -webkit-filter: drop-shadow(12px 12px 4px rgba(0,0,0,0.5)); filter: drop-shadow(12px 12px 4px rgba(0,0,0,0.5)); margin-inline: 15px"> </th>
                                                     <th><img src="assets/img/1576240838903.png" alt="" style="width: 40px; opacity:0.5; -webkit-filter: drop-shadow(12px 12px 4px rgba(0,0,0,0.5)); filter: drop-shadow(12px 12px 4px rgba(0,0,0,0.5)); margin-inline: 15px"> </th>
                                                 </tr>
@@ -267,13 +288,7 @@
                                     <span class="neon-icon text-8xl lg:text-8xl"><i class="pl-8 fas fa-link"></i></span>
                                     <div class="text-green-500 lg:text-2xl xl:text-2xl md:text-xl text-4xl mx-auto link-size">
                                         <a href="https://www.instagram.com/holly._hilz/" class="button-pf justify-center py-3 px-5 flex m-12"><div class="namelink">Instagram</div> <i class="fab fa-instagram text-3xl"></i> </a>
-
                                         <a href="https://github.com/anthopernot" class="button-pf justify-center py-3 px-8 flex m-12"><div class="namelink">Github</div> <i class="fab fa-github text-3xl"></i></a>
-
-                                        <!--
-                                        <a href="#" class="button-pf justify-center py-3 px-8 flex m-12" id="btn-github"><div class="text" data-text="Github" id="github-text"></div> <i class="fab fa-github"></i></a>
-                                        -->
-
                                         <a href="https://www.artstation.com/tukey" class="button-pf justify-center py-3 px-10 flex m-12"><div class="namelink">ArtStation</div> <i class="fab fa-artstation text-3xl"></i></a>
                                 </div>
                             </div>
@@ -285,99 +300,7 @@
 
 
 
-
-
-
-            <div class="modal" id="my-modal">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <span class="close" onclick="closeModal()">&times;</span>
-                        <a class="prev" id="prev-btn">&#10094;</a>
-                        <a class="next" id="next-btn"> &#10095; </a>
-                        <span class="numbertext" id="index-number"></span>
-                    </div>
-
-                    <div class="modal-body">
-                        <!--
-                        <div class="my-slides" data-index-number="1/4">
-                            <img src="assets/img/custom/af1_cookie.jpg" class="portrait-image image" alt="first">
-                        </div>
-                        <div class="my-slides" data-index-number="2/4">
-                            <img src="assets/img/custom/af1_cookie.jpg" class="portrait-image image" alt="first">
-                        </div>
-                        <div class="my-slides" data-index-number="3/4">
-                            <img src="assets/img/custom/af1_cookie.jpg" class="portrait-image image" alt="first">
-                        </div>
-                        <div class="my-slides" data-index-number="4/4">
-                            <img src="assets/img/custom/af1_cookie.jpg" class="portrait-image image" alt="first">
-                        </div>
-                        -->
-                    </div>
-
-                    <div class="modal-footer">
-                        <p id="caption"></p>
-                    </div>
-
-
-                </div>
-            </div>
-
-
-
-
-
-
-
-
-<!--
-
-
-            <div class="full-screen hidden flex-container-center">
-
-                <div class="fixed inset-0 bg-black bg-opacity-70" x-data="{activeTab: 1}">
-                    <div class=" flex justify-center items-center h-full w-screen">
-                        <dialog open class="modal rounded-lg overflow-hidden p-0 w-auto max-w-7xl md:mx-auto md:w-2/3 m-2">
-                            <div class=" flex flex-col lg:flex-row">
-                                <div class="relative h-96 sm:h-80 w-full lg:h-96  lg:w-2/3 xl:w-1/3  flex-none">
-                                    <img id="img-modal" src="" alt="" class="absolute inset-0 h-96 w-96 object-cover"/>
-                                    <div class="relative flex justify-end lg:justify-start flex-wrap text-white text-xl font-bold m-4">
-                                    </div>
-                                </div>
-                                <div class="w-full h-full">
-                                    <div class="p-4">
-                                        <div class="flex justify-between items-start">
-                                            <h3 class="text-xl font-bold mb-2" id="title-modal">
-                                            </h3>
-                                            <div class="text-gray-400 hover:text-gray-800 p-1">
-                                                <svg onclick="closePopup()" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M6 18L18 6M6 6l12 12"></path>
-                                                </svg>
-                                            </div>
-                                        </div>
-                                        <div class="relative">
-                                            <h3 class="text-sm mb-2 text-gray-500 font-custom-2" id="description-modal"></h3>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </dialog>
-                    </div>
-                </div>
-
-
--->
-
-
-
-
-
-
-
-
-
-
-
-
+            <!-- JAVASCRIPT LIBRARY -->
 
             <!-- include jQuery -->
             <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
@@ -389,10 +312,5 @@
             <script src="./assets/js/plugin/progress-bar.js"></script>
             <!-- include plugin glitch -->
             <script src="./assets/js/plugin/mgGlitch.min.js"></script>
-
-
-
-
-            </div>
     </body>
 </html>

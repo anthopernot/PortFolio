@@ -1,8 +1,8 @@
 
 const data = [
     { id: 1, title: "Che Guevara Cover", type:'design', tech:'Photoshop', img: [
-            { id: 1, url: 'assets/img/design/cover/cheguevara1.png'},
-            { id: 2, url: 'assets/img/design/cover/cheguevara2.png'}
+            { id: 1, url: 'assets/img/design/cover/cheguevara2.png'},
+            { id: 2, url: 'assets/img/design/cover/cheguevara1.png'}
         ]
     },
     { id: 2, title: "Cover - Street Tag", type:'design', tech:'Photoshop', img: [
@@ -220,7 +220,22 @@ const Link = {
 
 const Content = {
     template : "#content",
-    name: 'Content'
+    name: 'Content',
+    methods:{
+        completelyContent: function(link){
+            document.getElementById("imageContent").src = link;
+            document.getElementById("imageModal").src = link;
+        },
+        openModal: function(){
+            document.getElementById("my-modal").style.display = "inline-flex";
+            document.body.style.overflow = "hidden";
+        },
+        closeModal: function(){
+            document.getElementById("my-modal").style.display = "none";
+            document.body.style.overflow = "auto";
+            //document.querySelector(".modal-body").removeChild(  document.querySelector(".my-slides") );
+        }
+    }
 };
 
 const router = new VueRouter({
@@ -232,7 +247,7 @@ const router = new VueRouter({
         { path: '/portfolio/design', component: Design, name:'Design'},
         { path: '/portfolio/custom', component: Custom, name:'Custom'},
         { path: '/portfolio/webapp', component: WebApp, name:'WebApp'},
-        { path: '/portfolio/content/:userId/:imgTab', component: Content, name:'Content'},
+        { path: '/portfolio/content/:userId/:type/:imgTab', component: Content, name:'Content'},
         { path: '/link', component: Link, name:'Link'}
     ]
 });
