@@ -26,7 +26,7 @@ window.addEventListener('load', function () {
             document.getElementById('main').hidden = false;
             clearInterval(interval);
         }
-    }, );
+    }, 3);
 
 });
 
