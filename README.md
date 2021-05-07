@@ -2,7 +2,7 @@
 
 ## Presentation 
 
-Ce dépôt présente mon Porfolio artistique en ligne à l'occasion des sessions d'admissions 2021 pour des écoles de Design et Digital. Il est composé d'une partie de présentation de mes créationsavec un onglet pour chaque domaine que j'exerce. Une autre pour la présentation de mon profil, et la dernière pour retrouver les liens annexes à mes activités.  Avec une immersion Autodesk, ce site web est (à mon goût) à l'air du temps avec une inspiration pour le neumorphism. 
+Ce dépôt présente mon Porfolio artistique en ligne à l'occasion des sessions d'admissions 2021 pour des écoles de Design et Digitale. Il est composé d'une partie de présentation de mes créationsavec un onglet pour chaque domaine que j'exerce. Une autre pour la présentation de mon profil, et la dernière pour retrouver les liens annexes à mes activités.  Avec une immersion Autodesk, ce site web est (à mon goût) à l'air du temps avec une inspiration pour le neumorphism. 
 
 
 ## Descriptions
