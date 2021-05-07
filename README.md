@@ -11,7 +11,7 @@ Ce dépôt présente mon Porfolio artistique en ligne à l'occasion des sessions
 
 ## Conception
 
-IL est structuré en Single Page à l'aide du Framework VUEJS du langage frontend Javascript. Son fonctionnement me permet de ne pas recharger la page lors de la navigation entre les différents onglets. Cependant, je trouvais que la fabrication de module Vue n'était pas nécessaire pour un petit projet comme celui-ci. J'ai choisi le framework CSS Tailwind pour l'intégration frontend également.
+IL est structuré en Single Page à l'aide du Framework VueJS de Javascript. Son fonctionnement me permet de ne pas recharger la page lors de la navigation entre les différents onglets. Cependant, je trouvais que la fabrication de module Vue n'était pas nécessaire pour un petit projet comme celui-ci. J'ai choisi le framework CSS Tailwind pour l'intégration frontend également.
 
 Pour ce qui est du traitement des données, il est pour l'instant en local mais par la suite je compte concevoir une API. Je sais que vous auriez opter pour l'utilisation d'un ORM, mais je veux aussi montrer de quoi je suis capable sur l'aspect technique et de pousser la difficulté un peu plus à chaque fois! 
 
