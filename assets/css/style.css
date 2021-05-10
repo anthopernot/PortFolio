@@ -308,13 +308,23 @@ button {
     background-position: center;
     background-size : cover;
     background-repeat: no-repeat;
+    border-radius: 10px;
+    border-bottom: 3px solid rgba(70,163,83,0.55);
+    border-right: 3px solid rgba(59, 137, 59, 0.37);
+    box-shadow: 2px -9px 20px 0px rgba(45,85,45,0.30);
+    -webkit-box-shadow: 2px -9px 20px 0px rgba(45,85,45,0.30);
+    -moz-box-shadow: 2px -9px 20px 0px rgba(45,85,45,0.30);
+}
+
+.box-content {
+    box-shadow: 9px 1px 20px 0px rgba(45,85,45,0.35);
+    -webkit-box-shadow: 9px 1px 20px 0px rgba(45,85,45,0.35);
+    -moz-box-shadow: 9px 1px 20px 0px rgba(45,85,45,0.35);
 }
 
 
 .avatar{
     border-radius: 15px;
-    box-shadow:  5px 5px 10px #0e0c0c,
-    -5px -5px 10px #363232;
     background-image: url("../img/holo1.png");
     background-size: 200em ;
     background-repeat: no-repeat;
@@ -361,8 +371,6 @@ button {
     }
     .avatar{
         border-radius: 10px;
-        box-shadow:  5px 5px 10px #0e0c0c,
-        -5px -5px 10px #363232;
         background-image: url("../img/holo1.png");
         background-size: 90px;
         background-repeat: no-repeat;
@@ -375,19 +383,17 @@ button {
         font-size: 160%;
         margin-right: 6rem;;
     }
-    #description-about{
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
     #section-about{
-        padding-top: 45px;
-        padding-bottom: 45px;
-        margin-bottom: 15px;
-        margin-top: 10px;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .font-custom-2 {
+        line-height: 18px; font-size: 0.8em; font-family: 'Lato', sans-serif; color: #3cb16c;
     }
     #footer-about {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 
 }
@@ -400,6 +406,7 @@ button {
         max-height: 30rem;
         max-width: 100rem;
     }
+
 }
 
 @media screen and (min-height:600px){
@@ -419,8 +426,6 @@ button {
     }
     .avatar{
         border-radius: 10px;
-        box-shadow:  5px 5px 10px #0e0c0c,
-        -5px -5px 10px #363232;
         background-image: url("../img/holo1.png");
         background-size: 90px;
         background-repeat: no-repeat;
@@ -433,8 +438,8 @@ button {
         margin-right: 6rem;;
     }
     #description-about{
-        padding-top: 45px;
-        padding-bottom: 45px;
+        padding-top: 15px;
+        padding-bottom: 15px;
         padding-right: 10px;
     }
     #section-about{
@@ -467,19 +472,19 @@ button {
         margin-right: 4rem;
     }
     #description-about{
-        padding-top: 45px;
-        padding-bottom: 45px;
+        padding-top: 15px;
+        padding-bottom: 15px;
         padding-right: 10px;
     }
     #section-about{
-        padding-top: 50px;
-        padding-bottom: 50px;
-        margin-bottom: 20px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-bottom: 5px;
 
     }
     #footer-about {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
 
@@ -505,13 +510,17 @@ button {
         padding-right: 10px;
     }
     #section-about{
-        padding-bottom: 70px;
-        margin-bottom: 10px;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: 5px;
+    }
 
+    .font-custom-2 {
+        line-height: 18px; font-size: 0.8em; font-family: 'Lato', sans-serif; color: #3cb16c;
     }
     #footer-about {
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
     }
 }
 
@@ -539,11 +548,16 @@ button {
         margin-top: 17%;
     }
     #section-about{
-        padding-bottom: 5rem;
-        margin-bottom: 10px;
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        margin-bottom: 5px;
+    }
+
+    .font-custom-2 {
+        line-height: 20px; font-size: 0.9em; font-family: 'Lato', sans-serif; color: #3cb16c;
     }
     #footer-about {
-        padding-top: 40px;
+        padding-top: 20px;
         padding-bottom: 60px;
     }
 }
@@ -568,9 +582,13 @@ button {
         margin-top: 17%;
     }
     #section-about{
-        padding-top: 8rem;
-        padding-bottom: 7rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
         margin-bottom: 10px;
+    }
+
+    .font-custom-2 {
+        line-height: 20px; font-size: 0.9em; font-family: 'Lato', sans-serif; color: #3cb16c;
     }
 }
 
@@ -631,6 +649,10 @@ button {
         padding-top: 5rem;
         padding-bottom: 5rem;
     }
+
+    .font-custom-2 {
+        line-height: 30px; font-size: 1.2em; font-family: 'Lato', sans-serif; color: #3cb16c;
+    }
 }
 
 @media screen and (min-height:1000px){
@@ -661,6 +683,10 @@ button {
     #footer-about {
         padding-top: 40px;
         padding-bottom: 60px;
+    }
+
+    .font-custom-2 {
+        line-height: 30px; font-size: 1.2em; font-family: 'Lato', sans-serif; color: #3cb16c;
     }
     .namelink {
         display: flex;
@@ -706,6 +732,10 @@ button {
     #footer-about {
         padding-top: 4rem;
         padding-bottom: 4rem;
+    }
+
+    .font-custom-2 {
+        line-height: 40px; font-size: 1.6em; font-family: 'Lato', sans-serif; color: #3cb16c;
     }
     #aboutt {
         font-size: 160%;

@@ -3,16 +3,21 @@ module.exports = {
   darkMode: false, // or 'media' or 'class'
   theme: {
     extend: {
-      margin: {
-        '124': '-36rem',
+      keyframes: {
+        wiggle: {
+          '0%, 100%': {
+            transform: 'rotate(-3deg)'
+          },
+          '50%': {
+            transform: 'rotate(3deg)'
+          },
+        }
+      },
+      animation: {
+        wiggle: 'wiggle 1s ease-in-out infinite',
       }
     },
   },
-  variants: {
-    extend: {
-      width: ['group-hover'],
-      height: ['group-hover'],
-    },
-  },
+  variants: {},
   plugins: [],
 }

@@ -98,7 +98,7 @@
                         <script type="text/x-template" id="portfolio">
 
                             <div class="section mt-2 lg:text-2xl xl:text-xl">
-                                <a href="https://github.com/anthopernot/PortFolio" class="info-btn font-sans font-bold border-none text-center rounded-full fixed top-0 left-0 sm:top-50 bg-gray-700 bg-opacity-40 hover:bg-opacity-100 text-white text-md text-opacity-40 hover:text-opacity-80 h-10 w-10 m-4"><div class="mt-1">i</div></a>
+                                <a href="https://github.com/anthopernot/PortFolio" class="info-btn font-sans font-bold border-none text-center rounded-full fixed top-0 left-0 sm:top-50 bg-gray-700 bg-opacity-40 hover:bg-opacity-100 text-white text-md text-opacity-40 hover:text-opacity-80 h-10 w-10 m-4 opacity-90 xs:opacity-5 lg:opacity-90"><div class="mt-1">i</div></a>
                                 <div class="flex text-green-500 text-4xl justify-center neon-typo">PORTFOLIO</div>
                                 <div id="portfoliodescr" class="m-4 mt-6 xs:mt-2  text-center text-green-500" style="font-family: 'Lato', sans-serif; line-height: 25px">This page is dedicated to my personal book. <br>It includes my studies, my personal projects, as well as my freelance work</div>
                                 <div class="text-green-500 lg:text-1xl mx-auto my-24 gap-2">
@@ -127,7 +127,7 @@
                                             <div class="md:p-42 xl:m-8 sm:mb-12" v-for="design in designTab">
                                                 <div class="grid grid-raws-2">
                                                     <router-link :to="{ name: 'Content', params: {userId: design.title, type:design.type, imgTab: JSON.stringify(design.img) } }">
-                                                        <div class="custom-card card-design py-20"  v-bind:style='{ backgroundImage: "url(" + design.img[0].url + ")", }' >
+                                                        <div class="custom-card card-design py-20 my-2"  v-bind:style='{ backgroundImage: "url(" + design.img[0].url + ")", }' >
                                                             <span class="text-card-design">{{ design.title }}</span>
                                                         </div>
                                                     </router-link>
@@ -212,11 +212,13 @@
                                 <div class="px-2">
                                     <div class="flex -mx-4 justify-center">
                                         <div class="w-1/5 px-2" v-for="img in JSON.parse($route.params.imgTab)">
-                                            <div class="opacity-40 hover:opacity-100 h-16" @click="completelyContent(img.url)" v-bind:style='{ backgroundImage: "url(" + img.url + ")", backgroundPosition: "center", backgroundSize : "cover", backgroundRepeat: "no-repeat"}'></div>
+                                            <div class="rounded-sm opacity-40 hover:opacity-100 h-16" @click="completelyContent(img.url)" v-bind:style='{ backgroundImage: "url(" + img.url + ")", backgroundPosition: "center", backgroundSize : "cover", backgroundRepeat: "no-repeat"}'></div>
                                         </div>
                                     </div>
                                 </div>
-                                <img @click="openModal()" id="imageContent" class="image-content flex mx-auto" v-bind:src="JSON.parse($route.params.imgTab)[0].url" v-bind:alt="$route.params.title"/>
+                                <div class="box-content">
+                                    <img @click="openModal()" id="imageContent" class="image-content flex mx-auto" v-bind:src="JSON.parse($route.params.imgTab)[0].url" v-bind:alt="$route.params.title"/>
+                                </div>
                                 <!-- MODAL ZOOM -->
                                 <div class="modal" id="my-modal">
                                     <div class="modal-content">
@@ -243,9 +245,9 @@
 
                                         <div class="col-span-2 text-4xl md:text-6xl lg:text-8xl xl:text-8xl xs:mt-0  mt-2 " id="title-about"><h1 id="aboutt">ABOUT</h1></div>
                                         <div class="row-span-2 avatar"></div>
-                                        <div class="col-span-2 text-green-500 font-custom-2" id="description-about">Young self-taught artist who wants to be versatile in <br> creations: web developer, digital designer, <br> sneaker customer, painter <br> <a href="./assets/doc/cv.pdf"  target="_blank"><div class="motion-safe:hover:scale-110 bg-transparent hover:bg-green-500 hover:text-black font-bold mt-6 border-2 border-green-500 rounded-xl text-center">CV</div></a></div>
+                                        <div class="col-span-2 text-green-500 font-custom-2" id="description-about">Young self-taught artist who wants to be versatile <br>  in creations: web developer, digital designer, <br> sneaker customer, painter <br> <a href="./assets/doc/cv.pdf"  target="_blank"><div class="motion-safe:hover:scale-110 bg-transparent hover:bg-green-500 hover:text-black font-bold mt-6 border-2 border-green-500 rounded-xl text-center">CV</div></a></div>
                                         <div class="col-span-3 mx-auto" id="section-about">
-                                             <div class=" text-center mb-4" style="font-size: 20px; letter-spacing: 3px">SKILLS</div>
+                                             <div class=" text-center mb-4" style="font-size: 10px; letter-spacing: 3px">SKILLS</div>
                                             <table class="mx-auto">
                                                 <tr style="letter-spacing: 2px; line-height: 40px;font-size: 1em; font-family: 'Nanum Gothic', sans-serif; color: #3cb16c" >
                                                     <th class="text-xs">
@@ -265,7 +267,7 @@
 
                                         </div>
                                         <div class="col-span-3 " id="footer-about">
-                                            <div class=" text-center mb-4" style="font-size: 20px; letter-spacing: 3px">SOFTWARE</div>
+                                            <div class=" text-center mb-4" style="font-size: 10px; letter-spacing: 3px">SOFTWARE</div>
                                             <table class="mx-auto">
                                                 <tr>
                                                     <th><img src="assets/img/cc.png" alt="" style="width: 40px; opacity:0.5; -webkit-filter: drop-shadow(6px 6px 4px rgba(3,8,3,0.45)); filter: drop-shadow(6px 6px 4px rgb(5,17,5)); margin-inline: 15px"></th>
