@@ -98,10 +98,10 @@
                         <script type="text/x-template" id="portfolio">
 
                             <div class="section mt-2 lg:text-2xl xl:text-xl">
-                                <a href="https://github.com/anthopernot/PortFolio" class="info-btn font-sans font-bold border-none text-center rounded-full fixed top-0 left-0 sm:top-50 bg-gray-700 bg-opacity-40 hover:bg-opacity-100 text-white text-md text-opacity-40 hover:text-opacity-80 h-10 w-10 m-4 opacity-90 xs:opacity-5 lg:opacity-90"><div class="mt-1">i</div></a>
+                                <a href="https://github.com/anthopernot/PortFolio" class="info-btn font-sans font-bold border-none text-center rounded-full fixed top-0 left-0 sm:top-50 bg-gray-700 bg-opacity-40 hover:bg-opacity-100 text-white text-md text-opacity-40 hover:text-opacity-80 h-10 w-10 m-4 opacity-0 xs:opacity-0 md:opacity-90"><div class="mt-1">i</div></a>
                                 <div class="flex text-green-500 text-4xl justify-center neon-typo">PORTFOLIO</div>
                                 <div id="portfoliodescr" class="m-4 mt-6 xs:mt-2  text-center text-green-500" style="font-family: 'Lato', sans-serif; line-height: 25px">This page is dedicated to my personal book. <br>It includes my studies, my personal projects, as well as my freelance work</div>
-                                <div class="text-green-500 lg:text-1xl mx-auto my-24 gap-2">
+                                <div class="text-green-500 lg:text-1xl mx-auto my-16 gap-2">
                                     <router-link to="/portfolio/design">
                                         <a href="#" onclick="playSound();" class="button-pf justify-center py-3 px-11 flex m-12 sm:mt-2">DESIGN</a>
                                     </router-link>
@@ -151,7 +151,7 @@
                                             <div class="md:p-42 xl:m-8 sm:mb-12" v-for="custom in customTab">
                                                 <div class="grid grid-raws-2">
                                                     <router-link :to="{ name: 'Content', params: {userId: custom.title, type:custom.type, imgTab: JSON.stringify(custom.img) } }">
-                                                        <div class="custom-card card-design py-20"  v-bind:style='{ backgroundImage: "url(" + custom.img[0].url + ")", }' >
+                                                        <div class="custom-card card-design py-20 my-2"  v-bind:style='{ backgroundImage: "url(" + custom.img[0].url + ")", }' >
                                                             <span class="text-card-design">{{ custom.title }}</span>
                                                         </div>
                                                     </router-link>
@@ -247,16 +247,16 @@
                                         <div class="row-span-2 avatar"></div>
                                         <div class="col-span-2 text-green-500 font-custom-2" id="description-about">Young self-taught artist who wants to be versatile <br>  in creations: web developer, digital designer, <br> sneaker customer, painter <br> <a href="./assets/doc/cv.pdf"  target="_blank"><div class="motion-safe:hover:scale-110 bg-transparent hover:bg-green-500 hover:text-black font-bold mt-6 border-2 border-green-500 rounded-xl text-center">CV</div></a></div>
                                         <div class="col-span-3 mx-auto" id="section-about">
-                                             <div class=" text-center mb-4" style="font-size: 10px; letter-spacing: 3px">SKILLS</div>
+                                             <div class=" text-center text-sm lg:text-xl mb-4" style="letter-spacing: 3px">SKILLS</div>
                                             <table class="mx-auto">
                                                 <tr style="letter-spacing: 2px; line-height: 40px;font-size: 1em; font-family: 'Nanum Gothic', sans-serif; color: #3cb16c" >
-                                                    <th class="text-xs">
+                                                    <th class="text-xs lg:text-xl">
                                                         <ul class="text-left">
                                                             <li><i class="far fa-circle text-green-500 mr-1" style="font-size: 7px"></i>web developer</li><br>
                                                             <li><i class="far fa-circle text-green-500 text-xs mr-1" style="font-size: 7px"></i>graphic artist</li>
                                                         </ul>
                                                     </th>
-                                                    <th class="text-xs">
+                                                    <th class="text-xs lg:text-xl">
                                                         <ul class="text-left ml-16">
                                                             <li><i class="far fa-circle text-green-500 text-xs mr-1" style="font-size: 7px"></i>textile customer</li><br>
                                                             <li><i class="far fa-circle text-green-500 text-xs mr-1" style="font-size: 7px"></i>designer</li>
@@ -267,10 +267,10 @@
 
                                         </div>
                                         <div class="col-span-3 " id="footer-about">
-                                            <div class=" text-center mb-4" style="font-size: 10px; letter-spacing: 3px">SOFTWARE</div>
+                                            <div class=" text-center text-sm  lg:text-xl mb-4" style="letter-spacing: 3px">SOFTWARE</div>
                                             <table class="mx-auto">
                                                 <tr>
-                                                    <th><img src="assets/img/cc.png" alt="" style="width: 40px; opacity:0.5; -webkit-filter: drop-shadow(6px 6px 4px rgba(3,8,3,0.45)); filter: drop-shadow(6px 6px 4px rgb(5,17,5)); margin-inline: 15px"></th>
+                                                    <th><img src="assets/img/creative-cloud.png" alt="" style="width: 40px; opacity:0.5; -webkit-filter: drop-shadow(6px 6px 4px rgba(3,8,3,0.45)); filter: drop-shadow(6px 6px 4px rgb(5,17,5)); margin-inline: 15px"></th>
                                                     <th><img src="assets/img/krita-base.svg.png" alt="" style="width: 40px; opacity:0.5; -webkit-filter: drop-shadow(12px 12px 4px rgba(0,0,0,0.5)); filter: drop-shadow(12px 12px 4px rgba(0,0,0,0.5)); margin-inline: 15px"> </th>
                                                     <th><img src="assets/img/1576240838903.png" alt="" style="width: 40px; opacity:0.5; -webkit-filter: drop-shadow(12px 12px 4px rgba(0,0,0,0.5)); filter: drop-shadow(12px 12px 4px rgba(0,0,0,0.5)); margin-inline: 15px"> </th>
                                                 </tr>
